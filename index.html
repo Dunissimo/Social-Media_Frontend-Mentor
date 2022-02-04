@@ -12,26 +12,213 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+
     <title>Frontend Mentor | [Challenge Name Here]</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
+        width: 100%;
+        height: auto;
+        padding: 15px 0;
+        color: hsl(228, 34%, 66%);
+        background-color: hsl(232, 19%, 16%);
         font-size: 11px;
         text-align: center;
       }
+
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
     </style>
   </head>
+
   <body>
-    <section class="social-media"></section>
-    Social Media Dashboard Total Followers: 23,004 Dark Mode @nathanf 1987
-    Followers 12 Today @nathanf 1044 Followers 99 Today @realnathanf 11k
-    Followers 1099 Today Nathan F. 8239 Subscribers 144 Today Overview - Today
-    Page Views 87 3% Likes 52 2% Likes 5462 2257% Profile Views 52k 1375%
-    Retweets 117 303% Likes 507 553% Likes 107 19% Total Views 1407 12%
+    <section class="social-media">
+      <div class="background"></div>
+      <section class="container">
+        <div class="social-media__title-row">
+          <div class="social-media__title">
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: 23,004</p>
+          </div>
+          <div class="social-media__toggle-mode">
+            <h3>Dark Mode</h3>
+            <label class="switch">
+              <input type="checkbox" name="mode" id="mode" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="social-media__overview_big">
+          <div class="social-media__item_big">
+            <div class="border-top"></div>
+            <div class="social-media__row">
+              <img src="/images/icon-facebook.svg" alt="facebook" />
+              <p class="nickname">@nathanf</p>
+            </div>
+            <h2>1987</h2>
+            <h3>Followers</h3>
+            <div class="social-media__row">
+              <img src="/images/icon-up.svg" alt="up" />
+              <p class="success">12 Today</p>
+            </div>
+          </div>
+          <div class="social-media__item_big">
+            <div class="border-top"></div>
+            <div class="social-media__row">
+              <img src="/images/icon-twitter.svg" alt="twitter" />
+              <p class="nickname">@nathanf</p>
+            </div>
+            <h2>1044</h2>
+            <h3>Followers</h3>
+            <div class="social-media__row">
+              <img src="/images/icon-up.svg" alt="up" />
+              <p class="success">99 Today</p>
+            </div>
+          </div>
+          <div class="social-media__item_big">
+            <div class="border-top"></div>
+            <div class="social-media__row">
+              <img src="/images/icon-instagram.svg" alt="instagram" />
+              <p class="nickname">@realnathanf</p>
+            </div>
+            <h2>11k</h2>
+            <h3>Followers</h3>
+            <div class="social-media__row">
+              <img src="/images/icon-up.svg" alt="up" />
+              <p class="success">1099 Today</p>
+            </div>
+          </div>
+          <div class="social-media__item_big">
+            <div class="border-top"></div>
+            <div class="social-media__row">
+              <img src="/images/icon-youtube.svg" alt="youtube" />
+              <p class="nickname">Nathan F.</p>
+            </div>
+            <h2>8239</h2>
+            <h3>Followers</h3>
+            <div class="social-media__row">
+              <img src="/images/icon-down.svg" alt="down" />
+              <p class="failure">144 Today</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-media__overview-title">
+          <h2>Overview &ndash; Today</h2>
+        </div>
+
+        <div class="social-media__overview">
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Page Views</h3>
+              <p>87</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-facebook.svg" alt="facebook" />
+              <div class="social-media__row">
+                <img src="/images/icon-up.svg" alt="up" />
+                <p class="success">3%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Likes</h3>
+              <p>52</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-facebook.svg" alt="facebook" />
+              <div class="social-media__row">
+                <img src="/images/icon-down.svg" alt="down" />
+                <p class="failure">2%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Likes</h3>
+              <p>5462</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-instagram.svg" alt="instagram" />
+              <div class="social-media__row">
+                <img src="/images/icon-up.svg" alt="up" />
+                <p class="success">2257%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Profile Views</h3>
+              <p>52k</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-instagram.svg" alt="instagram" />
+              <div class="social-media__row">
+                <img src="/images/icon-down.svg" alt="down" />
+                <p class="failure">1375%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Retweets</h3>
+              <p>117</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-twitter.svg" alt="twitter" />
+              <div class="social-media__row">
+                <img src="/images/icon-up.svg" alt="up" />
+                <p class="success">303%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Likes</h3>
+              <p>507</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-twitter.svg" alt="twitter" />
+              <div class="social-media__row">
+                <img src="/images/icon-up.svg" alt="up" />
+                <p class="success">553%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Likes</h3>
+              <p>107</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-youtube.svg" alt="youtube" />
+              <div class="social-media__row">
+                <img src="/images/icon-down.svg" alt="down" />
+                <p class="failure">19%</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-media__item">
+            <div class="social-media__left">
+              <h3>Total Views</h3>
+              <p>1407</p>
+            </div>
+            <div class="social-media__right">
+              <img src="/images/icon-youtube.svg" alt="youtube" />
+              <div class="social-media__row">
+                <img src="/images/icon-down.svg" alt="down" />
+                <p class="failure">12%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
 
     <div class="attribution">
       Challenge by
