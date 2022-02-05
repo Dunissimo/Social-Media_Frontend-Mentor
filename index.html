@@ -18,21 +18,6 @@
     <title>Frontend Mentor | [Challenge Name Here]</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        width: 100%;
-        height: auto;
-        padding: 15px 0;
-        color: hsl(228, 34%, 66%);
-        background-color: hsl(232, 19%, 16%);
-        font-size: 11px;
-        text-align: center;
-      }
-
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
 
   <body>
@@ -41,13 +26,18 @@
       <section class="container">
         <div class="social-media__title-row">
           <div class="social-media__title">
-            <h1>Social Media Dashboard</h1>
+            <h1 class="title-dark">Social Media Dashboard</h1>
             <p>Total Followers: 23,004</p>
           </div>
           <div class="social-media__toggle-mode">
             <h3>Dark Mode</h3>
             <label class="switch">
-              <input type="checkbox" name="mode" id="mode" />
+              <input
+                class="switch-theme"
+                type="checkbox"
+                name="mode"
+                id="mode"
+              />
               <span class="slider"></span>
             </label>
           </div>
@@ -60,7 +50,7 @@
               <img src="/images/icon-facebook.svg" alt="facebook" />
               <p class="nickname">@nathanf</p>
             </div>
-            <h2>1987</h2>
+            <h2 class="title-dark">1987</h2>
             <h3>Followers</h3>
             <div class="social-media__row">
               <img src="/images/icon-up.svg" alt="up" />
@@ -73,7 +63,7 @@
               <img src="/images/icon-twitter.svg" alt="twitter" />
               <p class="nickname">@nathanf</p>
             </div>
-            <h2>1044</h2>
+            <h2 class="title-dark">1044</h2>
             <h3>Followers</h3>
             <div class="social-media__row">
               <img src="/images/icon-up.svg" alt="up" />
@@ -86,7 +76,7 @@
               <img src="/images/icon-instagram.svg" alt="instagram" />
               <p class="nickname">@realnathanf</p>
             </div>
-            <h2>11k</h2>
+            <h2 class="title-dark">11k</h2>
             <h3>Followers</h3>
             <div class="social-media__row">
               <img src="/images/icon-up.svg" alt="up" />
@@ -99,7 +89,7 @@
               <img src="/images/icon-youtube.svg" alt="youtube" />
               <p class="nickname">Nathan F.</p>
             </div>
-            <h2>8239</h2>
+            <h2 class="title-dark">8239</h2>
             <h3>Followers</h3>
             <div class="social-media__row">
               <img src="/images/icon-down.svg" alt="down" />
@@ -108,14 +98,14 @@
           </div>
         </div>
         <div class="social-media__overview-title">
-          <h2>Overview &ndash; Today</h2>
+          <h2 class="title-dark">Overview &ndash; Today</h2>
         </div>
 
         <div class="social-media__overview">
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Page Views</h3>
-              <p>87</p>
+              <p class="title-dark">87</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-facebook.svg" alt="facebook" />
@@ -128,7 +118,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Likes</h3>
-              <p>52</p>
+              <p class="title-dark">52</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-facebook.svg" alt="facebook" />
@@ -141,7 +131,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Likes</h3>
-              <p>5462</p>
+              <p class="title-dark">5462</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-instagram.svg" alt="instagram" />
@@ -154,7 +144,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Profile Views</h3>
-              <p>52k</p>
+              <p class="title-dark">52k</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-instagram.svg" alt="instagram" />
@@ -167,7 +157,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Retweets</h3>
-              <p>117</p>
+              <p class="title-dark">117</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-twitter.svg" alt="twitter" />
@@ -180,7 +170,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Likes</h3>
-              <p>507</p>
+              <p class="title-dark">507</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-twitter.svg" alt="twitter" />
@@ -193,7 +183,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Likes</h3>
-              <p>107</p>
+              <p class="title-dark">107</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-youtube.svg" alt="youtube" />
@@ -206,7 +196,7 @@
           <div class="social-media__item">
             <div class="social-media__left">
               <h3>Total Views</h3>
-              <p>1407</p>
+              <p class="title-dark">1407</p>
             </div>
             <div class="social-media__right">
               <img src="/images/icon-youtube.svg" alt="youtube" />
@@ -220,12 +210,14 @@
       </section>
     </section>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor </a
       >. Coded by
       <a target="_blank" href="https://github.com/Dunissimo/">Dunissimo</a>.
-    </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>

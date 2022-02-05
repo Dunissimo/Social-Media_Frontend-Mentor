@@ -30,7 +30,7 @@ $white: hsl(0, 0%, 100%);
 // light
 
 $white-bg: hsl(0, 0%, 100%);
-$very-pale-blue-top-bg: hsl(225, 100%, 98%);
+$very-pale-blue-top-bg: hsl(227, 13%, 87%);
 $light-grayish-blue-card-bg: hsl(227, 47%, 96%);
 $dark-grayish-blue: hsl(228, 12%, 44%);
 $very-dark-blue: hsl(230, 17%, 14%);
@@ -52,21 +52,35 @@ body {
 
   font-size: 14px;
 
-  // position: relative;
+  font-family: $family;
 
+  color: $desaturated-blue-text;
   background-color: $very-dark-blue;
+
+  &.light {
+    color: $dark-grayish-blue;
+    background-color: $white-bg;
+  }
 }
 
 .background {
+  width: 100%;
+  height: 60%;
+
   z-index: -10;
+
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 60%;
+
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+
   background-color: $dark-blue-top-bg;
+
+  &.light {
+    background-color: $very-pale-blue-top-bg;
+  }
 }
 
 .container {
@@ -78,24 +92,60 @@ body {
   margin: 0 auto;
   padding-top: 2rem;
 }
+
 .switch {
+  width: 45px;
+  height: 25px;
+
   position: relative;
+
   display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-switch input {
-  display: none;
+
+  input {
+    display: none;
+
+    &:checked + .slider {
+      background-image: linear-gradient(
+        to right,
+        #cdd2da,
+        #bdc7cc,
+        #b1bcbb,
+        #a8b0ab,
+        #a1a39d
+      );
+    }
+
+    &:checked + .slider:hover {
+      background-image: linear-gradient(
+        to right,
+        #bbc0c7,
+        #a4aeb3,
+        #858d8d,
+        #919994,
+        #80817c
+      );
+    }
+
+    &:checked + .slider::before {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+
+    &:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+  }
 }
 
 .slider {
-  position: absolute;
   cursor: pointer;
+
   border-radius: 34px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+
+  position: absolute;
+  inset: 0;
+
   background-image: linear-gradient(
     to right,
     #378fe6,
@@ -104,69 +154,41 @@ switch input {
     #00cfb6,
     #3eda82
   );
+
   -webkit-transition: 0.4s;
   transition: all 0.4s ease-in-out;
-}
+  transition: hover 1s ease;
 
-.slider:hover {
-  background-image: linear-gradient(
-    to right,
-    #cdd2da,
-    #bdc7cc,
-    #b1bcbb,
-    #a8b0ab,
-    #a1a39d
-  );
-}
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      #2f7dca,
+      #028eca,
+      #029fb8,
+      #01a18f,
+      #32b66b
+    );
+  }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  border-radius: 50%;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
+  &::before {
+    content: "";
 
-input:checked + .slider {
-  background-image: linear-gradient(
-    to right,
-    #cdd2da,
-    #bdc7cc,
-    #b1bcbb,
-    #a8b0ab,
-    #a1a39d
-  );
-}
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
 
-input:checked + .slider:hover {
-  background-image: linear-gradient(
-    to right,
-    #378fe6,
-    #00a9f0,
-    #00bfde,
-    #00cfb6,
-    #3eda82
-  );
-}
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
+    background-color: white;
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 }
 
 .social-media {
-  color: $white;
-
   &__title-row {
     display: block;
   }
@@ -175,12 +197,12 @@ input:checked + .slider:before {
     width: 100%;
     padding-bottom: 0.5rem;
     h1 {
+      color: $white;
       font-weight: 700;
       font-size: 24px;
       margin-bottom: 0.4rem;
     }
     p {
-      color: $desaturated-blue-text;
       font-weight: 700;
       margin-bottom: 1rem;
     }
@@ -192,7 +214,6 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: space-between;
 
-    color: $desaturated-blue-text;
     font-weight: 700;
 
     padding-top: 1rem;
@@ -225,7 +246,6 @@ input:checked + .slider:before {
     height: 100%;
 
     border-radius: 5px;
-    background-color: $dark-blue-card-bg;
 
     margin-bottom: 1.5rem;
     padding: 1.5rem 0;
@@ -234,11 +254,15 @@ input:checked + .slider:before {
 
     overflow: hidden;
 
+    cursor: pointer;
+
     text-align: center;
 
     transition: all 0.3s ease-in;
 
     h2 {
+      color: $white;
+
       padding-top: 1rem;
       font-size: 48px;
       font-weight: 700;
@@ -246,7 +270,6 @@ input:checked + .slider:before {
 
     h3 {
       text-transform: uppercase;
-      color: $desaturated-blue-text;
       letter-spacing: 0.25rem;
       margin: 0.5rem 0 1.5rem 4%;
     }
@@ -259,11 +282,23 @@ input:checked + .slider:before {
       top: 0;
       left: 0;
     }
+
+    background-color: $dark-blue-card-bg;
+
+    &:hover {
+      background-color: $dark-grayish-blue;
+    }
+
+    &.light {
+      background-color: $light-grayish-blue-card-bg;
+      &:hover {
+        background-color: $light-btn;
+      }
+    }
   }
 
   &__item_big > div:nth-child(5) > img {
     margin-right: 5px;
-    // margin-bottom: 1%;
     height: 100%;
   }
 
@@ -291,10 +326,6 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .nickname {
-      color: $desaturated-blue-text;
-    }
   }
 
   &__row:not(:last-child) {
@@ -305,14 +336,8 @@ input:checked + .slider:before {
     }
   }
 
-  &__item_big:hover,
-  &__item:hover {
-    background-color: $dark-grayish-blue;
-    cursor: pointer;
-  }
-
   &__overview-title {
-    max-width: 85%;
+    max-width: 100%;
     margin: 0 auto;
     margin: 3rem auto 2rem auto;
 
@@ -321,8 +346,10 @@ input:checked + .slider:before {
   }
 
   &__overview {
-    overflow: hidden;
     width: 100%;
+
+    overflow: hidden;
+
     padding-bottom: 3rem;
 
     display: grid;
@@ -344,25 +371,41 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: space-between;
 
+    cursor: pointer;
+
     transition: all 0.3s ease-in;
+
+    background-color: $dark-blue-card-bg;
+
+    &:hover {
+      background-color: $dark-grayish-blue;
+    }
+
+    &.light {
+      background-color: $light-grayish-blue-card-bg;
+      &:hover {
+        background-color: $light-btn;
+      }
+    }
   }
   &__left {
-    width: 50%;
+    width: 90%;
     padding: 20px;
     text-align: left;
 
     h3 {
       font-weight: 700;
       font-size: 18px;
-      color: $desaturated-blue-text;
       margin-bottom: 1.75rem;
     }
     p {
+      font-weight: 700;
+      color: $white;
       font-size: 32px;
     }
   }
   &__right {
-    width: 50%;
+    width: 10%;
     padding: 20px;
     text-align: right;
 
@@ -380,6 +423,45 @@ input:checked + .slider:before {
   }
 }
 
+h1.title-dark,
+h2.title-dark,
+h3.title-dark,
+p.title-dark {
+  color: $white;
+}
+
+h1.light,
+h2.light,
+h3.light,
+p.light {
+  color: #000;
+}
+
+.attribution {
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+  color: hsl(228, 34%, 66%);
+  background-color: $dark-blue-top-bg;
+
+  font-size: 11px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  color: $desaturated-blue-text;
+
+  a {
+    margin-left: 0.1rem;
+  }
+
+  &.light {
+    background-color: $very-pale-blue-top-bg;
+    color: $dark-grayish-blue;
+  }
+}
+
 @media (min-width: 750px) {
   .background {
     height: 60%;
@@ -392,9 +474,7 @@ input:checked + .slider:before {
       width: 40%;
       margin-right: 10px;
     }
-    &__overview-title {
-      max-width: 100%;
-    }
+
     &__overview {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 1fr);
@@ -442,11 +522,8 @@ input:checked + .slider:before {
     &__item_big {
       width: 20%;
     }
-    &__overview-title {
-      max-width: 85%;
-    }
+
     &__overview {
-      max-width: 85%;
       margin: 0 auto;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
@@ -457,11 +534,5 @@ input:checked + .slider:before {
 @media (min-width: 1500px) {
   .container {
     max-width: 60%;
-  }
-  .social-media {
-    &__overview {
-      max-width: 85%;
-      margin: 0 auto;
-    }
   }
 }
