@@ -254,7 +254,7 @@ body {
     border-radius: 5px;
 
     margin-bottom: 1.5rem;
-    padding: 1.5rem 0;
+    padding: 28px 0;
 
     position: relative;
 
@@ -337,6 +337,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    #twitter {
+      height: 20px;
+    }
   }
 
   &__row:not(:last-child) {
