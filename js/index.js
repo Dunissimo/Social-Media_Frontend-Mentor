@@ -1,26 +1,18 @@
-const backgroundElem = document.querySelector(".background");
-
-const cardsBig = Array.from(
-  document.querySelectorAll(".social-media__item_big")
-);
-
-const cards = Array.from(document.querySelectorAll(".social-media__item"));
-
-const titles = Array.from(document.querySelectorAll(".title-dark"));
-
-const themeSwitcher = document.querySelector(".switch-theme");
-
-const footer = document.querySelector(".attribution");
-
 const elements = [
   document.body,
-  backgroundElem,
-  cardsBig,
-  cards,
-  titles,
-  footer,
+  // backgroung element
+  document.querySelector(".background"),
+  // cards bigger than others
+  Array.from(document.querySelectorAll(".social-media__item_big")),
+  // cards
+  Array.from(document.querySelectorAll(".social-media__item")),
+  // titles
+  Array.from(document.querySelectorAll(".title-dark")),
+  // footer
+  document.querySelector(".attribution"),
 ];
 
+const themeSwitcher = document.querySelector(".switch-theme");
 themeSwitcher.addEventListener("click", () => {
   elements.forEach((element) => {
     toggleClass(element, "light");
